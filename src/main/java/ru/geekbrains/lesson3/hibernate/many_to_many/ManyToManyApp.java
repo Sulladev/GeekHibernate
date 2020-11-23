@@ -23,6 +23,7 @@ public class ManyToManyApp {
         clear(em);
 
         try {
+
             EntityTransaction transaction = em.getTransaction();
             transaction.begin();
 
