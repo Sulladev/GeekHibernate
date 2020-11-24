@@ -33,11 +33,11 @@ public class Drone {
         this.price = price;
     }
 
-    public void addCustomerToDrone (Customer customer) {
-        if (customers == null)
-            customers = new ArrayList<>();
-        customers.add(customer);
-    }
+//    public void addCustomerToDrone (Customer customer) {
+//        if (customers == null)
+//            customers = new ArrayList<>();
+//        customers.add(customer);
+//    }
 
     public int getId() {
         return id;
@@ -61,6 +61,14 @@ public class Drone {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public List<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
     }
 
     @Override
