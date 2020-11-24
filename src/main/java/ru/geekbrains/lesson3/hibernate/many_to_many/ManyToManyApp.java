@@ -23,6 +23,7 @@ public class ManyToManyApp {
         clear(em);
 
         try {
+
             EntityTransaction transaction = em.getTransaction();
             transaction.begin();
 
@@ -57,6 +58,14 @@ public class ManyToManyApp {
             for (Book b : reader.getBooks()) {
                 System.out.println(b.getTitle());
             }
+
+            Book book = em.find(Book.class,book1.getId());
+            System.out.println(book);
+            System.out.println("Readers: ");
+            for (Reader b : book.getReaders()) {
+                System.out.println(b.getName());
+            }
+            
 
             List<Reader> readers = em.createQuery("SELECT r FROM Reader r ORDER BY size(r.books) DESC").getResultList();
             System.out.println(readers);
